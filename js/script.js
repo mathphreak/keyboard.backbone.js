@@ -8,14 +8,7 @@ $(function() {
 		top: 15
 	};
 	
-	Backbone.Keyboard.keyMeans(37, 'left');
-	Backbone.Keyboard.keyMeans(38, 'up');
-	Backbone.Keyboard.keyMeans(39, 'right');
-	Backbone.Keyboard.keyMeans(40, 'down');
-	Backbone.Keyboard.keyMeans(65, 'left');
-	Backbone.Keyboard.keyMeans(87, 'up');
-	Backbone.Keyboard.keyMeans(68, 'right');
-	Backbone.Keyboard.keyMeans(83, 'down');
+	Backbone.Keyboard.bindArrowWASD();
 	Backbone.Keyboard.keyMeans(77, 'mutate');
 	Backbone.Keyboard.bindAction('mutate', function(state) {
 		if (state) {

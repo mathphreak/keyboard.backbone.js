@@ -43,7 +43,8 @@ by having a global `Keyboard` object.  And because I wanted to make sure you don
 Binds a keyCode to a meaning.  (Well, duh.)
 
 ### `Backbone.Keyboard.bindAction(meaning, action)`
-Binds a meaning to an action.  If `meaning` and `action` are the same string, then it's not necessary to call this.
+Binds a meaning to an action.  If `meaning` and `action` are the same string, then it's not necessary to call this,
+unless you've already bound `meaning` to a different action.
 `action` can be a string or a function with two parameters: if the key is going down (keydown true/keyup false) and
 the event object itself, as recieved from jQuery, just in case it's needed.
 
@@ -61,6 +62,16 @@ without much work.  An example:
 	// but later, when something changes with the current state...
 	Backbone.Keyboard.bindAction('kp-down', 'alt-down'); // we just say that 'kp-down' doesn't mean 'down' anymore
 
-### `Backbone.onNextKey(callback)`
+### `Backbone.Keyboard.onNextKey(callback)`
 A convenience function, for (for example) changing a keyboard shortcut.  `callback` is given two parameters, one of which
 is the keycode and the other is the meaning previously assigned to the keycode, or `false` if there was no previous meaning.
+
+### `Backbone.Keyboard.bindArrowKeys()`
+A convenience function that binds the arrow keys to the meanings `left`, `right`, `up`, and `down`.
+
+### `Backbone.Keyboard.bindWASD()`
+A convenience function that binds the W, A, S, and D keys to the meanings `left`, `right`, `up`, and `down`, as would
+be expected in a normal WASD control scheme.
+
+### `Backbone.Keyboard.bindArrowWASD()`
+Another convenience function that calls `bindArrowKeys()` and `bindWASD()`.

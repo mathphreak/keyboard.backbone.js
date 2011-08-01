@@ -52,6 +52,25 @@ $(function() {
 		}
 	}
 	
+	var bindArrowKeys = Keyboard.bindArrowKeys = function() {
+		keyMeans(37, 'left');
+		keyMeans(38, 'up');
+		keyMeans(39, 'right');
+		keyMeans(40, 'down');
+	}
+	
+	var bindWASD = Keyboard.bindWASD = function() {
+		keyMeans(65, 'left');
+		keyMeans(87, 'up');
+		keyMeans(68, 'right');
+		keyMeans(83, 'down');
+	}
+	
+	var bindArrowWASD = Keyboard.bindArrowWASD = function() {
+		bindArrowKeys();
+		bindWASD();
+	}
+	
 	use(window);
 	window.bind("key:down", function(ev) {
 		var kc = ev.which;
