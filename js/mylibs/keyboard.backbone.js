@@ -14,7 +14,8 @@ $(function() {
 	var keyMeans = Keyboard.keyMeans = function(keyCode, meaning) {
 		keyMeanings[keyCode] = meaning;
 	}
-	
+
+
 	var bindAction = Keyboard.bindAction = function(meaning, action) {
 		meaningActions[meaning] = action;
 	}
